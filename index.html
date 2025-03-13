@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Market Report Generator</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li, form {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif; /* Example font */
+            line-height: 1;
+            background-color: #f4f7f6; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+
+        /* Basic layout */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark blue gradient */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        #input-section, #report-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #input-section h2, #report-section h2 {
+            margin-bottom: 15px;
+            color: #0f2027;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important for padding */
+        }
+
+        button {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Market Report Generator</h1>
+        </header>
+
+        <section id="input-section">
+            <h2>Generate Your Report</h2>
+            <form id="report-form">
+                <label for="market-analysis">Market Analysis:</label>
+                <textarea id="market-analysis" name="market-analysis" placeholder="Enter market trends, size, and growth"></textarea>
+
+                <label for="competitor-data">Competitor Data:</label>
+                <textarea id="competitor-data" name="competitor-data" placeholder="Analyze key competitors, their strengths, and weaknesses"></textarea>
+
+                <label for="target-audience">Target Audience:</label>
+                <input type="text" id="target-audience" name="target-audience" placeholder="Describe your target customer segments">
+
+                <label for="project-goals">Project Goals:</label>
+                <textarea id="project-goals" name="project-goals" placeholder="Outline the objectives and goals of the project"></textarea>
+
+                <button type="submit">Generate Report</button>
+            </form>
+        </section>
+
+        <section id="report-section">
+            <h2>Your Report</h2>
+            <div id="report-content">
+                </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 AI Report Generator. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('report-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get user input
+            const marketAnalysis = document.getElementById('market-analysis').value;
+            const competitorData = document.getElementById('competitor-data').value;
+            const targetAudience = document.getElementById('target-audience').value;
+            const projectGoals = document.getElementById('project-goals').value;
+
+            // Process the data and generate report (basic example)
+            let reportHTML = `
+                <h3>Market Analysis</h3>
+                <p>${marketAnalysis}</p>
+
+                <h3>Competitor Data</h3>
+                <p>${competitorData}</p>
+
+                <h3>Target Audience</h3>
+                <p>${targetAudience}</p>
+
+                <h3>Project Goals</h3>
+                <p>${projectGoals}</p>
+            `;
+
+            // Display the report
+            document.getElementById('report-content').innerHTML = reportHTML;
+        });
+    </script>
+</body>
+</html>
