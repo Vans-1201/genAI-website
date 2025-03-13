@@ -5,24 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Market Report Generator</title>
     <style>
-        /* Reset some default styles */
-        body, h1, h2, h3, p, ul, li, form {
+        body {
+            font-family: sans-serif;
             margin: 0;
             padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
+            background-color: #15202b; /* Dark blue background */
+            color: #fff; /* White text */
         }
 
-        body {
-            font-family: 'IBM Plex Sans', sans-serif; /* Example font */
-            line-height: 1;
-            background-color: #f4f7f6; /* Light gray background */
-            color: #333; /* Dark gray text */
-        }
-
-        /* Basic layout */
         .container {
             max-width: 960px;
             margin: 0 auto;
@@ -30,75 +20,139 @@
         }
 
         header {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark blue gradient */
-            color: white;
-            padding: 20px 0;
             text-align: center;
-            margin-bottom: 20px;
+            padding: 80px 0; /* Increased padding */
         }
 
-        header h1 {
-            font-size: 2em;
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px; /* Added margin */
         }
 
-        #input-section, #report-section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
+        h2 {
+            color: #fff;
+            margin-bottom: 30px; /* Increased margin */
+            font-size: 2rem; /* Increased font size */
+        }
+
+        section {
+            background-color: #212b36; /* Slightly lighter dark blue */
+            padding: 40px; /* Increased padding */
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        #input-section h2, #report-section h2 {
-            margin-bottom: 15px;
-            color: #0f2027;
+            margin-bottom: 30px;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ccc;
         }
 
-        input[type="text"],
         textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Important for padding */
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: #ccc;
         }
 
         button {
             background-color: #007bff; /* Blue button */
-            color: white;
-            padding: 10px 15px;
+            color: #fff;
+            padding: 15px 30px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1rem;
         }
 
-        button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+        #report-section {
+            background-color: #212b36;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        #report-content {
+            color: #ccc;
         }
 
         footer {
             text-align: center;
-            padding: 10px 0;
-            font-size: 0.8em;
+            padding: 20px 0;
             color: #777;
+            border-top: 1px solid #333; /* Added border */
+            margin-top: 50px; /* Added margin */
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background-color: #1b2631; /* Darker background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #ddd;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 150px 0; /* Increased padding */
+        }
+
+        .hero-section h1 {
+            font-size: 3rem; /* Increased font size */
+            margin-bottom: 30px; /* Increased margin */
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px; /* Increased margin */
+        }
+
+        /* Features Section */
+        .features-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+
+        .feature {
+            background-color: #212b36;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .feature h3 {
+            color: #fff;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>AI Market Report Generator</h1>
-        </header>
+        <section class="hero-section">
+            <h1>Automate Your Market Reports & RFPs with AI</h1>
+            <p>Empowering consulting firms and corporate strategy teams with AI-powered market narrative and RFP automation.</p>
+            <button>Get Early Access</button>
+        </section>
 
-        <section id="input-section">
+        <section>
             <h2>Generate Your Report</h2>
             <form id="report-form">
                 <label for="market-analysis">Market Analysis:</label>
@@ -107,20 +161,40 @@
                 <label for="competitor-data">Competitor Data:</label>
                 <textarea id="competitor-data" name="competitor-data" placeholder="Analyze key competitors, their strengths, and weaknesses"></textarea>
 
-                <label for="target-audience">Target Audience:</label>
-                <input type="text" id="target-audience" name="target-audience" placeholder="Describe your target customer segments">
-
-                <label for="project-goals">Project Goals:</label>
-                <textarea id="project-goals" name="project-goals" placeholder="Outline the objectives and goals of the project"></textarea>
-
                 <button type="submit">Generate Report</button>
             </form>
         </section>
 
         <section id="report-section">
             <h2>Your Report</h2>
-            <div id="report-content">
-                </div>
+            <div id="report-content"></div>
+        </section>
+
+        <section class="features-section">
+            <div class="feature">
+                <h3>AI-Powered Insights</h3>
+                <p>Gain deep market insights with AI-driven analysis.</p>
+            </div>
+            <div class="feature">
+                <h3>RFP Automation</h3>
+                <p>Automate RFP creation and response processes.</p>
+            </div>
+            <div class="feature">
+                <h3>Collaboration</h3>
+                <p>Collaborate seamlessly with your team on reports.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"This platform has revolutionized our market research process. Highly recommended!"</p>
+                <p class="author">- John Doe, Consulting Firm</p>
+            </div>
+            <div class="testimonial">
+                <p>"The AI-powered insights have saved us countless hours. It's a game-changer."</p>
+                <p class="author">- Jane Smith, Corporate Strategy Team</p>
+            </div>
         </section>
 
         <footer>
@@ -135,8 +209,6 @@
             // Get user input
             const marketAnalysis = document.getElementById('market-analysis').value;
             const competitorData = document.getElementById('competitor-data').value;
-            const targetAudience = document.getElementById('target-audience').value;
-            const projectGoals = document.getElementById('project-goals').value;
 
             // Process the data and generate report (basic example)
             let reportHTML = `
@@ -145,12 +217,6 @@
 
                 <h3>Competitor Data</h3>
                 <p>${competitorData}</p>
-
-                <h3>Target Audience</h3>
-                <p>${targetAudience}</p>
-
-                <h3>Project Goals</h3>
-                <p>${projectGoals}</p>
             `;
 
             // Display the report
